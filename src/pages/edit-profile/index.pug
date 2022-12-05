@@ -1,0 +1,50 @@
+extends ../../components/Page/template.pug
+include ../../components/ProfileLayout/template.pug
+include ../../components/AvatarField/template.pug
+include ../../components/TextField/template.pug
+
+block args
+  - pageTitle = 'Редактировать профиль';
+  - pageDescription = '';
+  - pageWide = true;
+
+block content
+  +ProfileLayout({ title: 'Редактировать профиль' })
+    .EditProfile
+      form#edit-profile-form.EditProfile_form
+        .EditProfile_fields
+          +TextField({ label: userProfile.login.name })(
+            type='text',
+            name='login',
+            autofocus,
+            value=userProfile.login.value
+          )
+          +TextField({ label: userProfile.email.name })(
+            type='email',
+            name='email',
+            value=userProfile.email.value
+          )
+          +TextField({ label: userProfile.first_name.name })(
+            type='text',
+            name='first_name',
+            value=userProfile.first_name.value
+          )
+          +TextField({ label: userProfile.second_name.name })(
+            type='text',
+            name='second_name',
+            value=userProfile.second_name.value
+          )
+          +TextField({ label: userProfile.display_name.name })(
+            type='text',
+            name='display_name',
+            value=userProfile.display_name.value
+          )
+          +TextField({ label: userProfile.phone.name })(
+            type='tel',
+            autocomplete='tel',
+            name='phone',
+            value=userProfile.phone.value
+          )
+        button.Button.Button-sizeSmall.Button-primary(type='submit') Сохранить
+
+      +AvatarField(form='edit-profile-form', name='avatar')

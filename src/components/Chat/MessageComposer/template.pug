@@ -1,0 +1,31 @@
+include ../../TextField/template.pug
+
+mixin MessageComposer
+  form.MessageComposer&attributes(attributes)
+    .MessageComposer_wrapper
+      .MessageComposer_textField
+        +TextField.MessageComposer_input(
+          type='text',
+          autocomplete='off',
+          placeholder='Введите сообщение',
+          name='message'
+        )
+
+      .MessageComposer_actions
+        button.IconButton.MessageComposer_button.u_resetButton(
+          type='button',
+          aria-label='Прикрепить файл',
+          title='Прикрепить файл',
+          aria-haspopup='true',
+          aria-expanded='false'
+        )
+          span.IconButton_icon
+            icon(src='attach.svg', width='35', height='35')
+
+        button.IconButton.MessageComposer_button.u_resetButton(
+          type='submit',
+          aria-label='Отправить сообщение',
+          title='Отправить'
+        )
+          span.IconButton_icon
+            icon(src='send.svg', width='35', height='35')

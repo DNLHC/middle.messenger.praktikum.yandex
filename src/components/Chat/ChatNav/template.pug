@@ -1,0 +1,7 @@
+include ../ActionBar/template.pug
+include ../ChatList/template.pug
+
+mixin ChatNav(chatId)
+  nav.ChatNav&attributes(attributes)
+    +ActionBar
+    +ChatList(chatId)

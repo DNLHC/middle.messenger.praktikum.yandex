@@ -1,0 +1,25 @@
+include ../ContextMenu/template.pug
+
+mixin AttachMenu
+  +ContextMenu.AttachMenu
+    button.ContextMenu_item.u_resetButton.ContextMenu_item-withIcon(
+      role='menuitem',
+      type='button'
+    )
+      span.ContextMenu_icon
+        icon(src='file.svg', height='32', width='32')
+      | Файл
+    button.ContextMenu_item.u_resetButton.ContextMenu_item-withIcon(
+      role='menuitem',
+      type='button'
+    )
+      span.ContextMenu_icon
+        icon(src='media.svg', height='32', width='32')
+      | Фото или Видео
+    button.ContextMenu_item.ContextMenu_item-divided.u_resetButton.ContextMenu_item-withIcon(
+      type='button',
+      role='menuitem'
+    )
+      span.ContextMenu_icon
+        icon(src='location.svg', height='32', width='32')
+      | Локация

@@ -1,0 +1,11 @@
+mixin AuthForm({ title, submit, link } = {})
+  main.AuthForm
+    h1.AuthForm_title.Heading= title
+    form.AuthForm_form(method='GET', action='/chat.html')
+      .AuthForm_fields
+        block
+      .AuthForm_actions
+        button.AuthForm_submit.Button.Button-primary.Button-sizeLarge(
+          type='submit'
+        )= submit
+        a.AuthForm_link(href=link.to)= link.text

@@ -1,0 +1,17 @@
+include ../UserAvatar/template.pug
+
+mixin ChatHeader
+  - const user = { online: true, name: 'Андрей' };
+
+  header.ChatHeader&attributes(attributes)
+    .ChatHeader_profile
+      +UserAvatar(user).ChatHeader_avatar
+      h1.ChatHeader_name= user.name
+
+    button.IconButton.ChatHeader_action.u_resetButton(
+      type='button',
+      aria-label='Удалить чат',
+      title='Удалить'
+    )
+      span.IconButton_icon
+        icon(src='delete.svg', width='25', height='25')

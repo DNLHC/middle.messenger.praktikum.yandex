@@ -1,0 +1,14 @@
+extends ../components/Page/template.pug
+include ../components/Chat/template.pug
+include ../components/DetailsMenu/template.pug
+include ../components/AttachMenu/template.pug
+
+block args
+  - pageTitle = 'Чат';
+  - pageDescription = '';
+  - pageWide = true;
+
+block content
+  +Chat(2)
+  +DetailsMenu
+  +AttachMenu

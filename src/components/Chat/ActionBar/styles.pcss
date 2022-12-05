@@ -1,0 +1,28 @@
+.ActionBar {
+  flex: 0 0;
+  padding: 20px 10px 20px 20px;
+  border-bottom: 1px solid var(--color-border-default);
+
+  &_container {
+    display: flex;
+  }
+
+  &_searchField {
+    color: var(--color-fg-subtle);
+    margin-right: 15px;
+    flex: 1 1 auto;
+  }
+
+  &_actions {
+    flex: 0 1 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_button {
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}

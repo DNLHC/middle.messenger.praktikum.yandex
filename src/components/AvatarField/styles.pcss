@@ -1,0 +1,41 @@
+.AvatarField {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_wrapper {
+    position: relative;
+
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      inset: 0;
+
+      background-color: hsla(0, 0%, 0%, 0.15);
+      opacity: 0;
+      transition: opacity var(--transition-duration-default);
+      pointer-events: none;
+    }
+  }
+
+  &_placeholder {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-color: var(--color-bg-muted);
+  }
+}

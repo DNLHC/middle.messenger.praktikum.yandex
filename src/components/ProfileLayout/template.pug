@@ -1,0 +1,9 @@
+include ../GoBackButton/template.pug
+
+mixin ProfileLayout({ title } = {})
+  main.ProfileLayout
+    .ProfileLayout_container
+      .ProfileLayout_row
+        h1.ProfileLayout_title.Heading= title
+        +GoBackButton
+      block

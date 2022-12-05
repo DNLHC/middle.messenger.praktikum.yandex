@@ -1,0 +1,31 @@
+extends ../../components/Page/template.pug
+include ../../components/ProfileLayout/template.pug
+include ../../components/AvatarField/template.pug
+
+block args
+  - pageTitle = 'Профиль';
+  - pageDescription = '';
+  - pageWide = true;
+
+block content
+  +ProfileLayout({ title: 'Профиль' })
+    .Profile
+      dl.Profile_fields
+        each field in userProfile
+          dt.Profile_fieldName= field.name
+          dd.Profile_fieldValue= field.value
+      .Profile_avatar
+        +AvatarField
+
+      .Profile_actions
+        a.Profile_button.Button.Button-sizeSmall.Button-outlined(
+          href='~/src/pages/edit-profile/index.pug'
+        ) Редактировать
+
+        a.Profile_button.Button.Button-sizeSmall.Button-outlined(
+          href='~/src/pages/change-password/index.pug'
+        ) Изменить пароль
+
+        a.Profile_button.Button.Button-sizeSmall.Button-outlined.Button-danger(
+          href='~/src/pages/sign-in.pug'
+        ) Выйти

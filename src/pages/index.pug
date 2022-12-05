@@ -1,0 +1,39 @@
+extends ../components/Page/template.pug
+
+block args
+  - pageTitle = 'Home';
+  - pageDescription = 'Sweet home';
+
+block content
+  style(type='text/css').
+    nav {
+      width: 500px;
+      height: 500px;
+      padding: 15px;
+    }
+    li {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  nav
+    ul
+      li
+        a(href='./sign-in.pug') Вход
+      li
+        a(href='./sign-up.pug') Регистрация
+      li
+        a(href='./chat.pug') Чат
+      li
+        a(href='./chat-menu.pug') Чат с модалками
+      li
+        a(href='./chat-not-selected.pug') Чат не выбран
+      li
+        a(href='./profile/index.pug') Профиль
+      li
+        a(href='./edit-profile/index.pug') Редактировать профиль
+      li
+        a(href='./change-password/index.pug') Изменить пароль
+      li
+        a(href='./404.pug') 404
+      li
+        a(href='./50x.pug') 50x

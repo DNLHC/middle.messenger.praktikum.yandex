@@ -1,0 +1,88 @@
+.TextField {
+  --TextField-icon-size: 26px;
+  --TextField-icon-indent: 8px;
+  --TextField-offset-left-base: 18px;
+  --TextField-offset-left: var(--TextField-offset-left-base);
+
+  position: relative;
+  display: block;
+
+  font-size: var(--font-size-base);
+
+  &-small {
+    --TextField-icon-size: 22px;
+    --TextField-icon-indent: 5px;
+    --TextField-offset-left-base: 15px;
+
+    font-size: var(--font-size-small);
+  }
+
+  &-withIcon {
+    --TextField-offset-left: calc(
+      var(--TextField-offset-left-base) + var(--TextField-icon-size) +
+        var(--TextField-icon-indent)
+    );
+  }
+
+  &_icon {
+    position: absolute;
+    left: var(--TextField-offset-left-base);
+    top: 50%;
+    transform: translateY(-50%);
+
+    height: var(--TextField-icon-size);
+    width: var(--TextField-icon-size);
+  }
+
+  &_label {
+    position: absolute;
+    top: 9px;
+    left: var(--TextField-offset-left);
+
+    color: var(--color-fg-subtle);
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    letter-spacing: 0.004em;
+  }
+
+  &_input {
+    display: block;
+
+    width: 100%;
+    padding: 27px var(--TextField-offset-left) 12px;
+    border: 1px solid var(--color-border-default);
+    border-radius: 14px;
+    background-color: var(--color-input-bg);
+
+    color: var(--color-fg-default);
+    font-weight: 500;
+    font-family: inherit;
+    font-size: inherit;
+
+    transition: background-color var(--transition-duration-default);
+
+    &::placeholder {
+      color: var(--color-fg-subtle);
+      font-size: inherit;
+      font-weight: 400;
+
+      transition: opacity var(--transition-duration-default);
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    &:focus {
+      background-color: var(--color-input-bg-focus);
+    }
+  }
+
+  &-small &_input {
+    padding: 11px var(--TextField-offset-left);
+  }
+
+  & + & {
+    margin-top: 35px;
+  }
+}

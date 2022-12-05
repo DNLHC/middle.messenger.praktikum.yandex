@@ -1,0 +1,104 @@
+.Button {
+  position: relative;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 3.2em;
+  min-width: 9.2em;
+  padding: 0 1.5em;
+  border: 0;
+  border-radius: 1.87em;
+
+  vertical-align: middle;
+  white-space: nowrap;
+  color: var(--color-fg-default);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+
+  cursor: pointer;
+  appearance: none;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:active {
+    user-select: none;
+  }
+
+  &-sizeSmall {
+    font-size: var(--font-size-small);
+    font-weight: 500;
+  }
+
+  &-sizeLarge {
+    font-size: var(--font-size-large);
+  }
+}
+
+.Button-primary {
+  background-color: var(--color-accent);
+  transition: background-color var(--transition-duration-fast);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-accent-darken);
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      background: var(--color-accent-darken);
+    }
+  }
+
+  &:active {
+    background: var(--color-accent-dim);
+  }
+
+  &:disabled {
+    background-color: var(--color-bg-muted);
+    color: var(--color-fg-subtle);
+  }
+}
+
+.Button-outlined {
+  background: 0 0;
+  border: 1px solid var(--color-border-default);
+
+  transition: var(--transition-duration-fast) ease-in-out;
+  transition-property: background-color, border-color;
+
+  &:hover,
+  &:focus-visible {
+    background-color: hsl(0, 0%, 97%);
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      background-color: hsl(0, 0%, 97%);
+    }
+  }
+
+  &:hover {
+    border-color: var(--color-border-emphasis);
+  }
+
+  &:active {
+    background-color: hsl(0, 0%, 94%);
+  }
+
+  &:disabled {
+    background: 0 0;
+    border-color: var(--color-border-default);
+
+    color: var(--color-fg-subtle);
+  }
+
+  &.Button-danger {
+    color: var(--color-danger);
+    border-color: var(--color-danger);
+  }
+}

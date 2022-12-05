@@ -1,0 +1,17 @@
+include ../../data/_chats.pug
+include ../../data/_messages.pug
+include ../../data/_user-profile.pug
+
+doctype html
+html(lang='ru')
+  block args
+  head
+    title= pageTitle
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content=pageDescription)
+    meta(rel='shortcut icon', href='/favicon.ico')
+    link(rel='stylesheet', href='~/src/styles/style.pcss')
+  body.Page(class=`${pageWide ? 'Page-wide' : ''}`)
+    .Page_container
+      block content

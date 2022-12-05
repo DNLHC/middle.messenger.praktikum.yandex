@@ -1,0 +1,26 @@
+extends ../components/Page/template.pug
+include ../components/AuthForm/template.pug
+include ../components/TextField/template.pug
+
+block args
+  - pageTitle = 'Вход';
+  - pageDescription = 'Страница входа';
+
+block content
+  -
+    const form = {
+      title: 'Вход',
+      submit: 'Войти',
+      link: {
+        text: 'Нет аккаунта?',
+        to: './sign-up.pug'
+      }
+    }
+
+  +AuthForm(form)
+    +TextField({ label: userProfile.login.name })(
+      type='text',
+      name='login',
+      autofocus
+    )
+    +TextField({ label: 'Пароль' })(type='password', name='password')

@@ -1,0 +1,21 @@
+.Page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &-wide &_container {
+    height: calc(100vh - var(--page-container-offset));
+    width: calc(100vw - var(--page-container-offset));
+    max-width: 1400px;
+  }
+
+  &_container {
+    position: relative;
+
+    border-radius: 18px;
+    background-color: var(--color-bg-default);
+    box-shadow: var(--color-shadow-small);
+    overflow: hidden;
+  }
+}

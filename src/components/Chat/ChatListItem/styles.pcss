@@ -1,0 +1,94 @@
+.ChatListItem {
+  /*
+     Цвет фона устанавливается через custom-property т.к
+     нам нужно одновременно обновлять цвет обводки статуса 
+     в компоненте UserAvatar
+  */
+  --ChatListItem-color-bg: var(--color-bg-default);
+  --UserAvatar-color-border: var(--ChatListItem-color-bg);
+
+  position: relative;
+  display: flex;
+  height: 80px;
+  padding: 10px 10px 10px 15px;
+  background-color: var(--ChatListItem-color-bg);
+  border-bottom: 1px solid var(--color-border-default);
+
+  transition: background-color var(--transition-duration-fast);
+  cursor: pointer;
+
+  &_active {
+    --ChatListItem-color-bg: var(--color-accent);
+  }
+
+  &:hover:not(&_active) {
+    --ChatListItem-color-bg: var(--color-bg-subtle);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+  }
+
+  &_avatar {
+    flex: 0 0 40px;
+  }
+
+  &_details {
+    flex-grow: 1;
+    margin-left: 12px;
+    overflow: hidden;
+  }
+
+  &_notifications {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  &_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+  }
+
+  &_name {
+    flex: 1 1 auto;
+    padding-right: 4px;
+
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    overflow-x: hidden;
+  }
+
+  &_timestamp {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-fg-subtle);
+    white-space: nowrap;
+  }
+
+  &_lastMessageExcerpt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    padding-right: 40px;
+    margin: 0;
+
+    font-size: 12px;
+    color: var(--color-fg-subtle);
+    font-weight: 500;
+    line-height: 1.4;
+
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+
+    strong {
+      color: var(--color-fg-default);
+    }
+  }
+}

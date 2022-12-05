@@ -1,0 +1,4 @@
+mixin Message({ content, date, shortDate, userIsAuthor } = {})
+  article.Message(class=userIsAuthor ? 'Message-userIsAuthor' : '')
+    p.Message_content= content
+      time.Message_timestamp(datetime=date)= shortDate

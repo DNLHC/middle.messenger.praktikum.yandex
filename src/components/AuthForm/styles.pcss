@@ -1,0 +1,39 @@
+.AuthForm {
+  width: 450px;
+  padding: 40px 65px 75px;
+
+  &_title {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &_fields {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 50px;
+  }
+
+  &_actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &_submit {
+    margin-bottom: 15px;
+    align-self: stretch;
+  }
+
+  &_link {
+    color: var(--color-fg-default);
+    font-weight: 500;
+
+    opacity: 0.6;
+    transition: opacity var(--transition-duration-fast);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

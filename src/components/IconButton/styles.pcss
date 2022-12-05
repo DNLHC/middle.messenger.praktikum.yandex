@@ -1,0 +1,27 @@
+.IconButton {
+  position: relative;
+  cursor: pointer;
+
+  &_icon {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &::after {
+    content: '';
+
+    inset: -1px;
+    position: absolute;
+    z-index: 0;
+
+    background-color: var(--color-button-bg-overlay);
+    border-radius: 22%;
+
+    opacity: 0;
+    transition: opacity var(--transition-duration-default);
+  }
+}
