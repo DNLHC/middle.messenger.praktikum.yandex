@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel 'src/pages/index.pug'",
     "build": "parcel build src/pages/index.pug",
-    "start": "node server/index.js"
+    "start": "npm run build && node server/index.js"
   },
   "repository": {
     "type": "git",
