@@ -3,7 +3,7 @@
 ## Related
 
 - [Design Figma](https://www.figma.com/file/RFRNLtvVdM6CYNWrmBfEHE/praktikum.messenger?node-id=0%3A1&t=t9EHyhTYeqjwsIIQ-1)
-- [Hosted on Netlify]()
+- [Hosted on Netlify](https://comfy-pavlova-00395b.netlify.app/)
 
 ## Usage
 
