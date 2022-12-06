@@ -1,0 +1,38 @@
+{
+  "name": "middle.messenger.praktikum.yandex",
+  "version": "1.0.0",
+  "description": "messenger.praktikum.yandex",
+  "context": "browser",
+  "scripts": {
+    "dev": "parcel 'src/pages/index.pug'",
+    "build": "parcel build src/pages/index.pug",
+    "start": "npm run build && node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DNLHC/middle.messenger.praktikum.yandex.git"
+  },
+  "engines": {
+    "node": ">=19.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DNLHC/middle.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/DNLHC/middle.messenger.praktikum.yandex#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@parcel/resolver-glob": "^2.8.0",
+    "@parcel/transformer-pug": "^2.8.0",
+    "@prettier/plugin-pug": "^2.3.0",
+    "parcel": "^2.8.0",
+    "parcel-reporter-static-files-copy": "^1.4.0",
+    "postcss-nested": "^6.0.0",
+    "posthtml-inline-svg": "^0.2.0",
+    "prettier": "^2.8.0"
+  }
+}

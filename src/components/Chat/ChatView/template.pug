@@ -1,0 +1,20 @@
+include ../MessageComposer/template.pug
+include ../Message/template.pug
+include ../ChatHeader/template.pug
+
+mixin ChatView(chatId)
+  .ChatView&attributes(attributes)
+    if chatId
+      main.ChatView_container(
+        role='tabpanel',
+        id=`chat-view-${chatId}`,
+        aria-expanded='true',
+        aria-labelledby=`chat-tab-${chatId}`
+      )
+        +ChatHeader
+        article.ChatView_messages.DynamicScrollbar
+          each message in messages
+            +Message(message)
+        +MessageComposer.ChatView_messageComposer
+    else
+      h3.ChatView_notice Выберите чат из списка слева

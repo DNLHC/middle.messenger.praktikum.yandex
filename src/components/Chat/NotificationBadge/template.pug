@@ -1,0 +1,4 @@
+mixin NotificationBadge(count = 0)
+  if count > 0
+    .NotificationBadge&attributes(attributes)
+      span.NotificationBadge_count= count

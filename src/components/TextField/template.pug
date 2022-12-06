@@ -1,0 +1,8 @@
+mixin TextField({ label, size = 'normal' } = {})
+  label.TextField(class=`TextField-${size} ${block ? 'TextField-withIcon' : ''}`)
+    if label
+    span.TextField_label(class=size === 'small' ? 'u_visuallyHidden' : '')= label
+    if block
+      span.TextField_icon
+        block
+    input.TextField_input(type='text')&attributes(attributes)

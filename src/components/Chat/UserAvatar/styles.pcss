@@ -1,0 +1,29 @@
+.UserAvatar {
+  position: relative;
+
+  height: 40px;
+  width: 40px;
+
+  &_image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: var(--color-bg-muted);
+  }
+
+  &-statusOnline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    box-sizing: content-box;
+    height: 8px;
+    width: 8px;
+    background-color: var(--color-success);
+    border-radius: 50%;
+    border: 2px solid var(--UserAvatar-color-border, var(--color-bg-default));
+  }
+}

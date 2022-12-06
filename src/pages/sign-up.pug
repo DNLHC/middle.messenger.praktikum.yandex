@@ -1,0 +1,47 @@
+extends ../components/Page/template.pug
+include ../components/AuthForm/template.pug
+include ../components/TextField/template.pug
+
+block args
+  - pageTitle = 'Регистрация';
+  - pageDescription = 'Страница регистрации';
+
+block content
+  -
+    const form = {
+      title: 'Регистрация',
+      submit: 'Создать аккаунт',
+      link: {
+        text: 'Есть аккаунт?',
+        to: './sign-in.pug'
+      }
+    }
+
+  +AuthForm(form)
+    +TextField({ label: userProfile.login.name })(
+      type='text',
+      name='login',
+      autofocus
+    )
+    +TextField({ label: userProfile.email.name })(
+      type='email',
+      name='email'
+    )
+    +TextField({ label: userProfile.first_name.name })(
+      type='text',
+      name='first_name'
+    )
+    +TextField({ label: userProfile.second_name.name })(
+      type='text',
+      name='second_name'
+    )
+    +TextField({ label: userProfile.phone.name })(
+      type='tel',
+      autocomplete='tel',
+      name='phone'
+    )
+    +TextField({ label: 'Пароль' })(type='password', name='password')
+    +TextField({ label: 'Пароль (еще раз)' })(
+      type='password',
+      name='password_second'
+    )

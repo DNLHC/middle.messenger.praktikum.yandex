@@ -1,0 +1,37 @@
+.DynamicScrollbar {
+  --color-scrollbar: hsla(0, 0%, 0%, 0.2);
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: var(--color-scrollbar);
+  }
+
+  &:hover {
+    scrollbar-color: var(--color-scrollbar) transparent;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar);
+  }
+
+  & {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overflow-y: overlay;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+
+  & {
+    scrollbar-color: transparent transparent;
+  }
+}

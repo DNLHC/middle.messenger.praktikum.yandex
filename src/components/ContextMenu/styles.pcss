@@ -1,0 +1,49 @@
+.ContextMenu {
+  --ContextMenu-icon-offset: 42px;
+
+  position: absolute;
+  z-index: var(--z-index-floating);
+
+  max-width: 220px;
+  min-width: 200px;
+  background-color: var(--color-bg-floating);
+  box-shadow: var(--color-shadow-large);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--border-radius-floating);
+  overflow: hidden;
+
+  &_item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    width: 100%;
+
+    color: var(--color-fg-default);
+    transition: background-color var(--transition-duration-fast);
+
+    &:has(> .ContextMenu_icon) {
+      padding-left: var(--ContextMenu-icon-offset);
+    }
+
+    @supports not selector(:has) {
+      &-withIcon {
+        padding-left: var(--ContextMenu-icon-offset);
+      }
+    }
+
+    &-divided {
+      border-bottom: 1px solid var(--color-border-default);
+    }
+
+    &:hover {
+      background-color: var(--color-bg-subtle);
+    }
+  }
+
+  &_icon {
+    position: absolute;
+    left: 5px;
+  }
+}

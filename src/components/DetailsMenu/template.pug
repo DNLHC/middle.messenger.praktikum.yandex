@@ -1,0 +1,17 @@
+include ../ContextMenu/template.pug
+
+mixin DetailsMenu
+  +ContextMenu.DetailsMenu
+    a.ContextMenu_item.ContextMenu_item-divided(
+      href='~/src/pages/profile/index.pug',
+      role='menuitem'
+    )
+      | Авторизованы как &nbsp;
+      strong Иван
+    button.ContextMenu_item.u_resetButton(role='menuitem', type='button') Добавить пользователя
+    button.ContextMenu_item.u_resetButton(role='menuitem', type='button') Удалить пользователя
+    button.ContextMenu_item.ContextMenu_item-divided.u_resetButton(
+      type='button',
+      role='menuitem'
+    ) Удалить чат
+    a.ContextMenu_item(href='~/src/pages/sign-in.pug', role='menuitem') Выйти

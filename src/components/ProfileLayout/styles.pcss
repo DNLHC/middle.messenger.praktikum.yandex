@@ -1,0 +1,31 @@
+.ProfileLayout {
+  padding-top: 55px;
+  padding-bottom: 80px;
+
+  &_container {
+    position: relative;
+    max-width: 625px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &_row {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding-bottom: 12px;
+    margin-bottom: 40px;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      left: -60px;
+      bottom: 0;
+      right: 0;
+      border-bottom: 1px solid var(--color-border-default);
+    }
+  }
+}

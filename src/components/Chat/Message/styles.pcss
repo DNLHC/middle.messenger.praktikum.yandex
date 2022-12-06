@@ -1,0 +1,45 @@
+.Message {
+  align-self: flex-start;
+  margin-bottom: 15px;
+  padding: 9px 10px 9px 12px;
+  max-width: 450px;
+  background-color: #eaf7fa;
+  border-radius: 18px 18px 18px 0;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+
+  &:first-of-type {
+    margin-top: 30px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 30px;
+  }
+
+  &-userIsAuthor {
+    align-self: flex-end;
+    background: 0 0;
+    border: 1px solid var(--color-border-default);
+    border-radius: 18px 18px 0 18px;
+  }
+
+  &_content {
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  &_timestamp {
+    position: relative;
+    top: 9px;
+    right: -1px;
+
+    float: right;
+    margin-left: 6px;
+
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-fg-subtle);
+    white-space: nowrap;
+  }
+}
