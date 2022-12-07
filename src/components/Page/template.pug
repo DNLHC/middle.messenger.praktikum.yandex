@@ -12,6 +12,6 @@ html(lang='ru')
     meta(name='description', content=pageDescription)
     meta(rel='shortcut icon', href='/favicon.ico')
     link(rel='stylesheet', href='~/src/styles/style.pcss')
-  body.Page(class=`${pageWide ? 'Page-wide' : ''}`)
+    body.Page(class=pageWide ? 'Page-wide' : '')
     .Page_container
       block content

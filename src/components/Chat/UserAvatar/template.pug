@@ -1,5 +1,5 @@
 mixin UserAvatar({ avatar, name, online = false } = {})
-  .UserAvatar(class=`${online ? 'UserAvatar-statusOnline' : ''}`)&attributes(attributes)
+  .UserAvatar(class=online ? 'UserAvatar-statusOnline' : '')&attributes(attributes)
     img.UserAvatar_image(
       src='~/src/assets/images/avatar.jpg',
       alt='Аватар',
