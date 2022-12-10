@@ -73,12 +73,12 @@
 
   &:hover,
   &:focus-visible {
-    background-color: hsl(0, 0%, 97%);
+    background-color: hsl(0deg 0% 97%);
   }
 
   @supports not selector(:focus-visible) {
     &:focus {
-      background-color: hsl(0, 0%, 97%);
+      background-color: hsl(0deg 0% 97%);
     }
   }
 
@@ -87,17 +87,16 @@
   }
 
   &:active {
-    background-color: hsl(0, 0%, 94%);
+    background-color: hsl(0deg 0% 94%);
   }
 
   &:disabled {
+    color: var(--color-fg-subtle);
     background: 0 0;
     border-color: var(--color-border-default);
-
-    color: var(--color-fg-subtle);
   }
 
-  &.Button-danger {
+  &-danger {
     color: var(--color-danger);
     border-color: var(--color-danger);
   }

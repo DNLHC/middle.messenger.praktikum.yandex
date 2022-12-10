@@ -6,14 +6,21 @@
   "scripts": {
     "dev": "parcel 'src/pages/index.pug'",
     "build": "parcel build src/pages/index.pug",
-    "start": "npm run build && node server/index.js"
+    "start": "npm run build && node server/index.js",
+    "lint": "npm run lint:all:eslint && npm run lint:all:stylelint && npm run format:all:prettier",
+    "lint:eslint": "eslint --fix",
+    "lint:stylelint": "stylelint --fix",
+    "format:prettier": "prettier --write --loglevel warn",
+    "lint:all:eslint": "npm run lint:eslint \"**/*.{js,ts}\"",
+    "lint:all:stylelint": "npm run lint:stylelint \"src/**/*.{css,pcss}\"",
+    "format:all:prettier": "npm run format:prettier \"**/*.{js,json,css,pcss,pug,ts}\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DNLHC/middle.messenger.praktikum.yandex.git"
   },
   "engines": {
-    "node": ">=19.0.0"
+    "node": ">=16.0.0"
   },
   "keywords": [],
   "author": "",
@@ -23,16 +30,31 @@
   },
   "homepage": "https://github.com/DNLHC/middle.messenger.praktikum.yandex#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "4.18.x"
   },
   "devDependencies": {
-    "@parcel/resolver-glob": "^2.8.0",
-    "@parcel/transformer-pug": "^2.8.0",
-    "@prettier/plugin-pug": "^2.3.0",
-    "parcel": "^2.8.0",
-    "parcel-reporter-static-files-copy": "^1.4.0",
-    "postcss-nested": "^6.0.0",
-    "posthtml-inline-svg": "^0.2.0",
-    "prettier": "^2.8.0"
+    "@parcel/resolver-glob": "2.8.x",
+    "@parcel/transformer-pug": "2.8.x",
+    "@prettier/plugin-pug": "2.3.x",
+    "@typescript-eslint/eslint-plugin": "5.45.x",
+    "@typescript-eslint/parser": "5.45.x",
+    "eslint": "8.29.x",
+    "eslint-config-airbnb-base": "15.0.x",
+    "eslint-config-airbnb-typescript": "17.0.x",
+    "eslint-config-prettier": "8.5.x",
+    "eslint-plugin-import": "2.26.x",
+    "eslint-plugin-promise": "6.1.x",
+    "eslint-plugin-unicorn": "45.0.x",
+    "parcel": "2.8.x",
+    "parcel-reporter-static-files-copy": "1.4.x",
+    "postcss-nested": "6.0.x",
+    "posthtml-inline-svg": "0.2.x",
+    "prettier": "2.8.x",
+    "stylelint": "14.16.x",
+    "stylelint-config-prettier": "9.0.x",
+    "stylelint-config-standard": "29.0.x",
+    "stylelint-csstree-validator": "2.0.x",
+    "stylelint-declaration-block-no-ignored-properties": "2.6.x",
+    "typescript": "4.9.x"
   }
 }

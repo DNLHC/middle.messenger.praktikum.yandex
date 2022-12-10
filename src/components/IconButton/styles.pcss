@@ -7,10 +7,6 @@
     z-index: 1;
   }
 
-  &:hover::after {
-    opacity: 1;
-  }
-
   &::after {
     content: '';
 
@@ -23,5 +19,9 @@
 
     opacity: 0;
     transition: opacity var(--transition-duration-default);
+  }
+
+  &:hover::after {
+    opacity: 1;
   }
 }

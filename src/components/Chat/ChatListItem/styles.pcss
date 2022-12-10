@@ -8,25 +8,29 @@
   --UserAvatar-color-border: var(--ChatListItem-color-bg);
 
   position: relative;
+
   display: flex;
+
   height: 80px;
   padding: 10px 10px 10px 15px;
+
+  cursor: pointer;
+
   background-color: var(--ChatListItem-color-bg);
   border-bottom: 1px solid var(--color-border-default);
 
   transition: background-color var(--transition-duration-fast);
-  cursor: pointer;
 
   &_active {
     --ChatListItem-color-bg: var(--color-accent);
   }
 
-  &:hover:not(&_active) {
-    --ChatListItem-color-bg: var(--color-bg-subtle);
-  }
-
   &:focus-visible {
     outline: 2px solid var(--color-accent);
+  }
+
+  &:hover:not(&_active) {
+    --ChatListItem-color-bg: var(--color-bg-subtle);
   }
 
   &_avatar {
@@ -41,8 +45,8 @@
 
   &_notifications {
     position: absolute;
-    bottom: 10px;
     right: 10px;
+    bottom: 10px;
   }
 
   &_row {
@@ -54,18 +58,19 @@
 
   &_name {
     flex: 1 1 auto;
+
     padding-right: 4px;
+    overflow-x: hidden;
 
     font-weight: 600;
+    text-overflow: ellipsis;
     letter-spacing: 0.03em;
     white-space: nowrap;
-    text-overflow: ellipsis;
-
-    overflow-x: hidden;
   }
 
   &_timestamp {
     flex-shrink: 0;
+
     font-size: 11px;
     font-weight: 500;
     color: var(--color-fg-subtle);
@@ -73,18 +78,20 @@
   }
 
   &_lastMessageExcerpt {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+    display: box;
+
     padding-right: 40px;
     margin: 0;
+    overflow: hidden;
 
     font-size: 12px;
-    color: var(--color-fg-subtle);
     font-weight: 500;
     line-height: 1.4;
+    color: var(--color-fg-subtle);
+
+    -webkit-box-orient: vertical;
 
     -webkit-line-clamp: 2;
-    overflow: hidden;
 
     strong {
       font-weight: 600;
