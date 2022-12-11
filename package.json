@@ -15,6 +15,9 @@
     "lint:all:stylelint": "npm run lint:stylelint \"src/**/*.{css,pcss}\"",
     "format:all:prettier": "npm run format:prettier \"**/*.{js,json,css,pcss,pug,ts}\""
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DNLHC/middle.messenger.praktikum.yandex.git"

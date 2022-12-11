@@ -7,12 +7,8 @@
       "~*": ["./*"]
     },
     "module": "ESNext" /* Specify what module code is generated. */,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./src/type-definitions"
-    ] /* Specify multiple folders that act like './node_modules/@types'. */,
+    "exclude": ["dist", ".parcel-cache", "node_modules", "packages"],
     "resolveJsonModule": true /* Enable importing .json files. */,
-    "moduleResolution": "node" /* Specify how TypeScript looks up a file from a given module specifier. */,
     "sourceMap": true /* Create source map files for emitted JavaScript files. */,
     "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
