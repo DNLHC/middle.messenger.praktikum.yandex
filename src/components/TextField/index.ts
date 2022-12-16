@@ -14,9 +14,9 @@ export type Props = {
 };
 
 export class TextField extends Block<Props> {
-  constructor({ children, ...params }: BlockParams<Props>) {
+  constructor(props: BlockParams<Props>) {
     super({
-      ...params,
+      ...props,
       children: { errorMessage: new ErrorMessage() },
     });
   }
