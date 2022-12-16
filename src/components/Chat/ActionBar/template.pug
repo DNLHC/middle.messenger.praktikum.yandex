@@ -1,30 +1,25 @@
-include ../../TextField/template.pug
+include ../../Icon/template.pug
 
-mixin ActionBar
-  header.ActionBar
-    .ActionBar_container
-      .ActionBar_searchField
-        +TextField({ size: 'small', label: 'Поиск' })(
-          placeholder='Поиск',
-          name='chat-search'
-        )
-          icon(src='search.svg')
+header.ActionBar
+  .ActionBar_container
+    .ActionBar_searchField
+      | !{ searchField }
 
-      .ActionBar_actions
-        a.IconButton.ActionBar_button(
-          href='~/src/pages/profile/index.pug',
-          aria-label='Профиль',
-          title='Перейти в профиль'
-        )
-          span.IconButton_icon
-            icon(src='profile.svg', height='26', width='26')
+    .ActionBar_actions
+      a.IconButton.ActionBar_button(
+        href='/profile',
+        aria-label='Профиль',
+        title='Перейти в профиль'
+      )
+        span.IconButton_icon
+          +Icon('profile')
 
-        button.IconButton.ActionBar_button.u_resetButton(
-          type='button',
-          title='Меню',
-          aria-label='Меню',
-          aria-haspopup='true',
-          aria-expanded='false'
-        )
-          span.IconButton_icon
-            icon(src='menu.svg', width='26', height='26')
+      button.IconButton.ActionBar_button.u_resetButton(
+        type='button',
+        title='Меню',
+        aria-label='Меню',
+        aria-haspopup='true',
+        aria-expanded='false'
+      )
+        span.IconButton_icon
+          +Icon('menu')

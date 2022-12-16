@@ -3,14 +3,14 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+
+    &[aria-expanded='false'] {
+      align-items: center;
+      justify-content: center;
+    }
   }
 
-  &_notice {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-
+  &_hint {
     font-size: 20px;
     font-weight: 500;
     color: var(--color-fg-subtle);

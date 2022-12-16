@@ -1,10 +1,7 @@
-include ../ChatListItem/template.pug
-
-mixin ChatList(chatId)
-  ul.ChatList.DynamicScrollbar(
-    role='tablist',
-    aria-orientation='vertical',
-    aria-label='Список чатов'
-  )
-    each chat in chatList
-      +ChatListItem(chat, chat.id === chatId)
+ul.ChatList.DynamicScrollbar(
+  role='tablist',
+  aria-orientation='vertical',
+  aria-label='Список чатов'
+)
+  each chat in chats
+    | !{ chat }

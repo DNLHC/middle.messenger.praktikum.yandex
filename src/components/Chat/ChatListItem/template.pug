@@ -1,33 +1,29 @@
-include ../UserAvatar/template.pug
-include ../NotificationBadge/template.pug
+-
+  const online = status === 'online';
+  const message = authorIsUser ? `<strong>Вы:</strong> ${lastMessage}` : lastMessage;
+  let label = `Чат ${name}`;
 
-mixin ChatListItem({ id, status, lastMessage, name, date, unreadMessages, shortDate, authorIsUser }, isActive)
-  -
-    const online = status === 'online';
-    const message = authorIsUser ? `<strong>Вы:</strong> ${lastMessage}` : lastMessage;
-    let label = `Чат ${name}`;
+  if (unreadMessages) {
+    label += `, ${unreadMessages} непрочитанных сообщений`;
+  }
 
-    if (unreadMessages) {
-      label += `, ${unreadMessages} непрочитанных сообщений`;
-    }
+li.ChatListItem(
+  @click,
+  role='tab',
+  tabindex=isActive ? 0 : -1,
+  aria-selected=isActive ? 'true' : 'false',
+  aria-controls=`chat-view-${id}`,
+  class=isActive ? 'ChatListItem_active' : '',
+  id=`chat-tab-${id}`,
+  aria-label=label
+)
+  | !{ userAvatar }
 
-  li.ChatListItem(
-    role='tab',
-    tabindex=isActive ? 0 : -1,
-    aria-selected=isActive ? 'true' : 'false',
-    aria-controls=`chat-view-${id}`,
-    class=isActive ? 'ChatListItem_active' : '',
-    id=`chat-tab-${id}`,
-    aria-label=label
-  )
-    +UserAvatar({ online, name }).ChatListItem_avatar
+  .ChatListItem_details
+    .ChatListItem_row
+      h4.ChatListItem_name= name
+      time.ChatListItem_timestamp(datetime=date)= shortDate
+    p.ChatListItem_lastMessageExcerpt !{ message }
 
-    .ChatListItem_details
-      .ChatListItem_row
-        h4.ChatListItem_name= name
-        time.ChatListItem_timestamp(datetime=date)= shortDate
-      p.ChatListItem_lastMessageExcerpt !{ message }
-
-    +NotificationBadge(unreadMessages).ChatListItem_notifications(
-      aria-hidden='true'
-    )
+  if unreadMessages
+    | !{ notificationBadge }

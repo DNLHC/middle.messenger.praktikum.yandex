@@ -1,7 +1,6 @@
 include ../GoBackButton/template.pug
 
-mixin ErrorPage({ code, subtitle })
-  main.ErrorPage
-    h1.ErrorPage_title= code
-    h3.ErrorPage_subtitle= subtitle
-    +GoBackButton
+main.ErrorPage
+  h1.ErrorPage_title= title
+  h2.ErrorPage_subtitle= subtitle
+  +GoBackButton

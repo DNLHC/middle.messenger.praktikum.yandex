@@ -1,7 +1,3 @@
-include ../../data/_chats.pug
-include ../../data/_messages.pug
-include ../../data/_user-profile.pug
-
 doctype html
 html(lang='ru')
   block args
@@ -13,5 +9,8 @@ html(lang='ru')
     meta(rel='shortcut icon', href='/favicon.ico')
     link(rel='stylesheet', href='~/src/styles/style.pcss')
     body.Page(class=pageWide ? 'Page-wide' : '')
-    .Page_container
-      block content
+      include ./svg-sprite.svg
+      #app.Page_container
+        block content
+
+      block scripts

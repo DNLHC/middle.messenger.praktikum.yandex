@@ -9,7 +9,7 @@
 
   font-size: var(--font-size-base);
 
-  &-small {
+  &-sizeSmall {
     --TextField-icon-size: 22px;
     --TextField-icon-indent: 5px;
     --TextField-offset-left-base: 15px;
@@ -43,6 +43,14 @@
     font-size: var(--font-size-small);
     font-weight: 500;
     letter-spacing: 0.004em;
+
+    &:active {
+      user-select: none;
+    }
+  }
+
+  &-hasError &_label {
+    color: var(--color-danger);
   }
 
   &_input {
@@ -78,11 +86,17 @@
     }
   }
 
-  &-small &_input {
+  &-sizeSmall &_input {
     padding: 11px var(--TextField-offset-left);
   }
 
   & + & {
     margin-top: 35px;
+  }
+
+  &_error {
+    position: absolute;
+    top: calc(100% + 3px);
+    left: var(--TextField-offset-left);
   }
 }

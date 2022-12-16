@@ -4,16 +4,14 @@
   "description": "messenger.praktikum.yandex",
   "context": "browser",
   "scripts": {
-    "dev": "parcel 'src/pages/index.pug'",
+    "dev": "parcel src/pages/index.pug",
     "build": "parcel build src/pages/index.pug",
     "start": "npm run build && node server/index.js",
-    "lint": "npm run lint:all:eslint && npm run lint:all:stylelint && npm run format:all:prettier",
-    "lint:eslint": "eslint --fix",
-    "lint:stylelint": "stylelint --fix",
-    "format:prettier": "prettier --write --loglevel warn",
-    "lint:all:eslint": "npm run lint:eslint \"**/*.{js,ts}\"",
-    "lint:all:stylelint": "npm run lint:stylelint \"src/**/*.{css,pcss}\"",
-    "format:all:prettier": "npm run format:prettier \"**/*.{js,json,css,pcss,pug,ts}\""
+    "lint": "npm run lint:eslint && npm run lint:stylelint && npm run lint:ts",
+    "lint:eslint": "eslint \"src/**/*.{js,ts}\"",
+    "lint:ts": "tsc --noEmit",
+    "lint:stylelint": "stylelint \"src/**/*.{css,pcss}\"",
+    "format": "prettier \"**/*.{js,json,css,pcss,pug,ts}\""
   },
   "workspaces": [
     "packages/*"
@@ -28,6 +26,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "alias": {
+    "src": "./src"
+  },
   "bugs": {
     "url": "https://github.com/DNLHC/middle.messenger.praktikum.yandex/issues"
   },
@@ -51,7 +52,6 @@
     "parcel": "2.8.x",
     "parcel-reporter-static-files-copy": "1.4.x",
     "postcss-nested": "6.0.x",
-    "posthtml-inline-svg": "0.2.x",
     "prettier": "2.8.x",
     "stylelint": "14.16.x",
     "stylelint-config-prettier": "9.0.x",

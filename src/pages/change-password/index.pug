@@ -1,28 +1,9 @@
 extends ../../components/Page/template.pug
-include ../../components/ProfileLayout/template.pug
-include ../../components/TextField/template.pug
 
 block args
   - pageTitle = 'Изменить пароль';
   - pageDescription = '';
   - pageWide = true;
 
-block content
-  +ProfileLayout({ title: 'Изменить пароль' })
-    .ChangePassword
-      form
-        .ChangePassword_fields
-          +TextField({ label: 'Старый пароль' })(
-            type='password',
-            name='oldPassword',
-            autofocus
-          )
-          +TextField({ label: 'Новый пароль' })(
-            type='password',
-            name='newPassword'
-          )
-          +TextField({ label: 'Новый пароль (еще раз)' })(
-            type='password',
-            name='newPasswordSecond'
-          )
-        button.Button.Button-sizeSmall.Button-primary(type='submit') Сохранить
+block scripts
+  script(src='./index.ts', type='module')

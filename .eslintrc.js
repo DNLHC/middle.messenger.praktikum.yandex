@@ -13,7 +13,6 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -28,6 +27,7 @@ module.exports = {
     'arrow-body-style': 'off',
     'class-methods-use-this': 'off',
     'no-use-before-define': 'off',
+    'no-empty': ['error', { allowEmptyCatch: true }],
 
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
@@ -63,6 +63,8 @@ module.exports = {
         case: 'kebabCase',
       },
     ],
+    'unicorn/prefer-ternary': 'off',
+    'unicorn/consistent-function-scoping': 'off',
 
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',

@@ -1,0 +1,6 @@
+mixin Icon(name, size=26)
+  svg(height=size, width=size)&attributes(attributes)
+    use(
+      xmlns:xlink='http://www.w3.org/1999/xlink',
+      xlink:href='#svg-sprite-' + name
+    )
