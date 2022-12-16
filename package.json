@@ -11,7 +11,7 @@
     "lint:eslint": "eslint \"src/**/*.{js,ts}\"",
     "lint:ts": "tsc --noEmit",
     "lint:stylelint": "stylelint \"src/**/*.{css,pcss}\"",
-    "format": "prettier \"**/*.{js,json,css,pcss,pug,ts}\""
+    "format": "prettier \"**/*.{js,json,css,pcss,pug,ts}\" --write --loglevel \"warn\""
   },
   "workspaces": [
     "packages/*"

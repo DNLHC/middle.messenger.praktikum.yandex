@@ -24,3 +24,9 @@ npm run build
 ```bash
 npm run start
 ```
+
+### Lint the project with stylelint, eslint and tsc
+
+```bash
+npm run lint
+```
