@@ -14,20 +14,20 @@
     overflow: hidden;
     cursor: pointer;
 
-    &:hover::after {
-      opacity: 1;
-    }
-
     &::after {
       content: '';
 
       position: absolute;
       inset: 0;
 
-      background-color: hsla(0, 0%, 0%, 0.15);
+      background-color: hsl(0deg 0% 0% / 0.15);
       opacity: 0;
       transition: opacity var(--transition-duration-default);
       pointer-events: none;
+    }
+
+    &:hover::after {
+      opacity: 1;
     }
   }
 

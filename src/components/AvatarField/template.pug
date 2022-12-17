@@ -1,9 +1,9 @@
-mixin AvatarField
-  .AvatarField
-    label.AvatarField_wrapper
-      input.AvatarField_input.u_visuallyHidden(type='file', accept='image/*')&attributes(attributes)
+.AvatarField
+  label.AvatarField_wrapper
+    input.AvatarField_input.u_visuallyHidden(type='file', accept='image/*')&attributes(attrs)
 
-      img.AvatarField_placeholder(
-        src='~/src/assets/images/avatar-placeholder.png'
-      )
-    button.Button.Button-sizeSmall.Button-outlined(type='button') Поменять аватар
+    img.AvatarField_placeholder(
+      src='~/src/assets/images/avatar-placeholder.png',
+      alt='Аватар'
+    )
+  button.Button.Button-sizeSmall.Button-outlined(type='button') Поменять аватар

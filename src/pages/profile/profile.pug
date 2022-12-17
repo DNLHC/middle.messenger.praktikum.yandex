@@ -1,0 +1,20 @@
+.Profile
+  dl.Profile_fields
+    each field in userProfile
+      dt.Profile_fieldName= field.name
+      dd.Profile_fieldValue= field.value
+  .Profile_avatar
+    | !{ avatarField }
+
+  .Profile_actions
+    a.Profile_button.Button.Button-sizeSmall.Button-outlined(
+      href='/edit-profile'
+    ) Редактировать
+
+    a.Profile_button.Button.Button-sizeSmall.Button-outlined(
+      href='/change-password'
+    ) Изменить пароль
+
+    a.Profile_button.Button.Button-sizeSmall.Button-outlined.Button-danger(
+      href='/sign-in'
+    ) Выйти

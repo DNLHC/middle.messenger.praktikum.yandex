@@ -1,0 +1,7 @@
+.EditProfile
+  form#edit-profile-form.EditProfile_form(@submit)
+    .EditProfile_fields
+      each field in fields
+        | !{ field }
+    button.Button.Button-sizeSmall.Button-primary(type='submit') Сохранить
+  | !{ avatarField }

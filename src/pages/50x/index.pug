@@ -1,0 +1,9 @@
+extends ../../components/Page/template.pug
+
+block args
+  - pageTitle = 500;
+  - pageDescription = 'Всё сломалось';
+  - pageWide = true;
+
+block scripts
+  script(src='./index.ts', type='module')

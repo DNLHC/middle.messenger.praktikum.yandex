@@ -1,4 +1,3 @@
-mixin NotificationBadge(count = 0)
-  if count > 0
-    .NotificationBadge&attributes(attributes)
-      span.NotificationBadge_count= count
+if unreadMessages > 0
+  .NotificationBadge&attributes(attrs)
+    span.NotificationBadge_count= unreadMessages

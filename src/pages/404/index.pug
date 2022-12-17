@@ -1,0 +1,9 @@
+extends ../../components/Page/template.pug
+
+block args
+  - pageTitle = 404;
+  - pageDescription = 'Страница не найдена';
+  - pageWide = true;
+
+block scripts
+  script(src='./index.ts', type='module')

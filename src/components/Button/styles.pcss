@@ -15,7 +15,7 @@
   white-space: nowrap;
   color: var(--color-fg-default);
   font-size: var(--font-size-base);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.015em;
 
   cursor: pointer;
@@ -31,7 +31,6 @@
 
   &-sizeSmall {
     font-size: var(--font-size-small);
-    font-weight: 500;
   }
 
   &-sizeLarge {
@@ -73,12 +72,12 @@
 
   &:hover,
   &:focus-visible {
-    background-color: hsl(0, 0%, 97%);
+    background-color: hsl(0deg 0% 97%);
   }
 
   @supports not selector(:focus-visible) {
     &:focus {
-      background-color: hsl(0, 0%, 97%);
+      background-color: hsl(0deg 0% 97%);
     }
   }
 
@@ -87,14 +86,13 @@
   }
 
   &:active {
-    background-color: hsl(0, 0%, 94%);
+    background-color: hsl(0deg 0% 94%);
   }
 
   &:disabled {
+    color: var(--color-fg-subtle);
     background: 0 0;
     border-color: var(--color-border-default);
-
-    color: var(--color-fg-subtle);
   }
 
   &.Button-danger {

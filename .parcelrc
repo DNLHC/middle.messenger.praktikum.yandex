@@ -1,5 +1,8 @@
 {
   "extends": "@parcel/config-default",
   "resolvers": ["@parcel/resolver-glob", "..."],
+  "transformers": {
+    "compile:*": ["parcel-transformer-pug-template-compiler", "..."]
+  },
   "reporters": ["...", "parcel-reporter-static-files-copy"]
 } 

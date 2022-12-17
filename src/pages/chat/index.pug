@@ -1,0 +1,9 @@
+extends ../../components/Page/template.pug
+
+block args
+  - pageTitle = 'Чат';
+  - pageDescription = '';
+  - pageWide = true;
+
+block scripts
+  script(src='./index.ts', type='module')

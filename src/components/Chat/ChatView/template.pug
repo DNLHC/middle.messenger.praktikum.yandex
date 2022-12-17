@@ -1,20 +1,16 @@
-include ../MessageComposer/template.pug
-include ../Message/template.pug
-include ../ChatHeader/template.pug
+.ChatView&attributes(attrs)
+  main.ChatView_container(
+    role='tabpanel',
+    id=`chat-view-${activeChatId}`,
+    aria-expanded=activeChatId ? 'true' : 'false',
+    aria-labelledby=activeChatId ? `chat-tab-${activeChatId}` : 'chat-view-hint'
+  )
+    if activeChatId
+      | !{ chatHeader }
+      article.ChatView_messages.DynamicScrollbar
+        each message in messages
+          | !{ message }
 
-mixin ChatView(chatId)
-  .ChatView&attributes(attributes)
-    if chatId
-      main.ChatView_container(
-        role='tabpanel',
-        id=`chat-view-${chatId}`,
-        aria-expanded='true',
-        aria-labelledby=`chat-tab-${chatId}`
-      )
-        +ChatHeader
-        article.ChatView_messages.DynamicScrollbar
-          each message in messages
-            +Message(message)
-        +MessageComposer.ChatView_messageComposer
+      | !{ messageComposer }
     else
-      h3.ChatView_notice Выберите чат из списка слева
+      h1#chat-view-hint.ChatView_hint Выберите чат из списка слева

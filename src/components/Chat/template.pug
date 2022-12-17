@@ -1,7 +1,3 @@
-include ./ChatView/template.pug
-include ./ChatNav/template.pug
-
-mixin Chat(chatId)
-  .Chat
-    +ChatNav(chatId).Chat_leftPanel
-    +ChatView(chatId).Chat_mainView
+.Chat
+  | !{ chatNav }
+  | !{ chatView }
